@@ -68,7 +68,7 @@ We can create an example subcommand:
 public class MySuperSubcommand implements Command {
   @Override
   public void run(Lineman lineman, String[] args) {
-    lineman.getLogger().info("Ran my super subcommand!");
+    lineman.getLogger().success("Ran my super subcommand!");
   }
 }
 ```
@@ -96,26 +96,23 @@ Now, if you ran your app and passed the following arguments...
 ```
 ... you would see the result of logic in `MyCoolCommand` and `MySuperSubcommand`.
 
-### Customizing the Logger
-Lineman has a custom built-in logger. The default name is 'lineman', and the default format is '%s :: %s'.
+### Using the Logger
+Lineman has a custom built-in logger which you should use when logging messages.
 
-To customize the name:
-```java
-lineman.getLogger().setName("my-cool-cli-app");
-```
-To customize the format:
-```java
-lineman.getLogger().setFormat("%s : %s");
-```
-**Both '%s' are required.**
+The logger can create these messages:
+- info
+- warn
+- error
+- severe
+- success
 
 You can use color in your log messages by using `Logger.Color`.
 ```java
-lineman.getLogger().info(Logger.Color.CYAN + "Hello, cyan world!");
+lineman.getLogger().info(Logger.Color.CYAN + "Hello, world - but in cyan!");
 ```
 An advantage of the lineman logger is that colors automatically reset so you don't have to do it yourself.
 
-## Use lineman
+## Get lineman
 Currently, lineman can be found on [jitpack](https://jitpack.io).
 
 ```xml
