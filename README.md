@@ -4,7 +4,7 @@
 [Getting Started](https://github.com/blueysh/lineman#getting-started) | 
 [Runtime Hooks](https://github.com/blueysh/lineman#attaching-runtime-hooks) | 
 [Commands](https://github.com/blueysh/lineman#adding-commands) | 
-[Logger](https://github.com/blueysh/lineman#customizing-the-logger) | 
+[Logger](https://github.com/blueysh/lineman#using-the-logger) | 
 [Install](https://github.com/blueysh/lineman#use-lineman)
 
 ## What is lineman?
