@@ -3,31 +3,24 @@ package lineman;
 public class Logger {
     Logger() {}
 
-    private String format = "%s :: %s";
-    private String name = "lineman";
-
-    public void setFormat(String format) {
-        this.format = format;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public void info(String msg) {
-        System.out.printf(Color.CYAN + "INFO " + format + "\n" + Color.RESET, name, msg);
+        System.out.println(Color.BLUE + "info   " + Color.RESET + " - " + msg);
+    }
+
+    public void success(String msg) {
+        System.out.println(Color.GREEN + "success" + Color.RESET + " - " + msg);
     }
 
     public void warn(String msg) {
-        System.out.printf(Color.YELLOW + "WARN " + format + "\n" + Color.RESET, name, msg);
+        System.out.println(Color.YELLOW + "warn   " + Color.RESET + " - " + msg);
     }
 
     public void err(String msg) {
-        System.out.printf(Color.RED_BOLD + "ERROR " + format + "\n" + Color.RESET, name, msg);
+        System.out.println(Color.RED_BRIGHT + "error  " + Color.RESET + " - " + msg);
     }
 
     public void severe(String msg) {
-        System.out.printf(Color.RED_BACKGROUND + "SEVERE " + format + "\n" + Color.RESET, name, msg);
+        System.out.println(Color.RED_BRIGHT + "severe " + Color.RESET + " - " + msg);
     }
 
     public void println(String msg) {

@@ -22,6 +22,10 @@ public interface Command {
             cmds.remove(0);
             subcommands.get(args[0]).run(lineman, cmds.toArray(String[]::new));
         } else {
+            if (subcommands.isEmpty()) {
+                lineman.getLogger().severe("unknown subcommand '" + args[0] + "'");
+                return;
+            }
             List<String> predictions = new ArrayList<>();
             subcommands.forEach((name, command) -> {if (name.startsWith(args[0]) || name.contains(args[0])) predictions.add(name);});
             lineman.getLogger().severe("unknown command '" + args[0] + "'. did you mean one of, " + predictions.toString().replace("[", "").replace("]", "") + "?");

@@ -59,6 +59,10 @@ public class Lineman {
             commands.remove(0);
             commandsRegistry.get(args[0]).run(this, commands.toArray(String[]::new));
         } else {
+            if (commandsRegistry.isEmpty()) {
+                logger.severe("unknown command '" + args[0] + "'");
+                return;
+            }
             List<String> predictions = new ArrayList<>();
             commandsRegistry.forEach((name, command) -> {if (name.startsWith(args[0]) || name.contains(args[0])) predictions.add(name);});
             logger.severe("unknown command '" + args[0] + "'. did you mean one of, " + predictions.toString().replace("[", "").replace("]", "") + "?");
